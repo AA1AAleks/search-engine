@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 026SkillBoxPractic!
+    url: jdbc:mysql://localhost:3306/search_engine?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+indexing-settings:
+  sites:
+    #    - url: https://www.lenta.ru
+    #      name: Лента.ру
+    #    - url: https://www.skillbox.ru
+    #      name: Skillbox
+    #    - url: https://www.playback.ru
+    #      name: PlayBack.Ru
+    - url: https://nikoartgallery.com
+      name: Креативное пространство и галерея Н.Б. Никогосяна
+    - url: https://et-cetera.ru/mobile/
+      name: Московский театр et-Cetera
+jsoup-connections:
+  user-agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36
+  referrer: http://www.google.com
+  timeout-min: 50 # нижняя граница задержки между вызовом jsoup парсера в миллисекундах
+  timeout-max: 150 # верхняя граница задержки между вызовом jsoup парсера в миллисекундах
